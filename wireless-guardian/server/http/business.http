@@ -1,0 +1,42 @@
+@url = http://localhost:8080/api/business
+
+GET {{url}} HTTP/1.1
+
+###
+
+GET {{url}}/45 HTTP/1.1
+
+###
+
+POST {{url}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "businessName": "CIA",
+    "address": "123 central ave.",
+    "city": "Minneapolis",
+    "state": "MN",
+    "zipCode": 55414,
+    "contactEmail": "central@intelligence.com",
+    "contactPhone": "6123456789"
+}
+
+###
+
+PUT {{url}}/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "businessName": "Business1",
+    "address": "123 Elm",
+    "city": "Des Moines",
+    "state": "IA",
+    "zipCode": 55555,
+    "contactEmail": "central@intelligence.com",
+    "contactPhone": "6123456789",
+    "businessId": 1
+}
+
+###
+
+DELETE {{url}}/7 HTTP/1.1
