@@ -5,3 +5,5 @@
     - businesses, reseller orgs, sales reps, sites
 2. WG mock data
 3. WG front-end
+  - front-end CSS/HTML design
+  - connect backend
