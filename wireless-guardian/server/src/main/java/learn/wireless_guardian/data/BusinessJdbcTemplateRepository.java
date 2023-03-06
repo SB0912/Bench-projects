@@ -32,7 +32,9 @@ public class BusinessJdbcTemplateRepository implements BusinessRepository{
                 "zip_code, " +
                 "contact_email, " +
                 "contact_phone " +
-                "from business limit 1000;";
+                "from business " +
+                "order by business_id desc " +
+                "limit 1000;";
         return jdbcTemplate.query(sql, new BusinessMapper());
     }
 

@@ -41,9 +41,9 @@ function NavBar() {
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Reseller Orgs" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">View</NavDropdown.Item>
+              <NavDropdown.Item href="ResellerOrgList">View</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item href="ResellerOrgForm">
                 Add/Edit
               </NavDropdown.Item>
             </NavDropdown>

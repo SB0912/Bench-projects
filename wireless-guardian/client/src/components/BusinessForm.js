@@ -3,14 +3,14 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useHistory, useParams, Link } from "react-router-dom";
 
-export default function BusinessForm(props) {
+function BusinessForm(props) {
   const [businessName, setBusinessName] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
-  const [zipCode, setZipCode] = useState(0);
-  const [ContactEmail, SetContactEmail] = useState("");
-  const [ContactPhone, SetContactPhone] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [contactEmail, SetContactEmail] = useState("");
+  const [contactPhone, SetContactPhone] = useState("");
   const [errors, setErrors] = useState([]);
 
   const params = useParams();
@@ -27,8 +27,8 @@ export default function BusinessForm(props) {
       setCity(targetBusiness.city);
       setState(targetBusiness.state);
       setZipCode(targetBusiness.zipCode);
-      SetContactEmail(targetBusiness.ContactEmail);
-      SetContactPhone(targetBusiness.ContactPhone);
+      SetContactEmail(targetBusiness.contactEmail);
+      SetContactPhone(targetBusiness.contactPhone);
     }
   };
 
@@ -50,9 +50,10 @@ export default function BusinessForm(props) {
       city,
       state,
       zipCode,
-      ContactEmail,
-      ContactPhone,
+      contactEmail,
+      contactPhone,
     };
+
     fetch("http://localhost:8080/api/business", {
       method: "POST",
       headers: {
@@ -64,8 +65,8 @@ export default function BusinessForm(props) {
       if (result.status === 201) {
         setErrors([]);
         clearForm();
-        props.getAll();
-        history.push("/list");
+        // props.getAll();
+        history.push("/business/list");
       } else {
         result.json().then((errors) => {
           setErrors(errors);
@@ -81,8 +82,8 @@ export default function BusinessForm(props) {
       city,
       state,
       zipCode,
-      ContactEmail,
-      ContactPhone,
+      contactEmail,
+      contactPhone,
       businessId: params.businessId,
     };
     fetch(`${"http://localhost:8080/api/business"}/${params.businessId}`, {
@@ -95,12 +96,12 @@ export default function BusinessForm(props) {
     }).then((response) => {
       if (response.status === 204) {
         clearForm();
-        props.getAll();
-        history.push("/list");
-        props.setErrors([]);
+        // props.getAll();
+        history.push("/business/list");
+        setErrors([]);
       } else {
         response.json().then((errors) => {
-          props.setErrors(errors);
+          setErrors(errors);
         });
       }
     });
@@ -111,7 +112,7 @@ export default function BusinessForm(props) {
     setAddress("");
     setCity("");
     setState("");
-    setZipCode(0);
+    setZipCode("");
     SetContactEmail("");
     SetContactPhone("");
   };
@@ -224,11 +225,11 @@ export default function BusinessForm(props) {
             style={{
               width: "200%",
             }}
-            value={ContactEmail}
+            value={contactEmail}
             onChange={(event) => {
               SetContactEmail(event.target.value);
             }}
-            type="text"
+            type="email"
             id="contact-email-input"
           />
         </div>
@@ -239,18 +240,18 @@ export default function BusinessForm(props) {
             style={{
               width: "200%",
             }}
-            value={ContactPhone}
+            value={contactPhone}
             onChange={(event) => {
               SetContactPhone(event.target.value);
             }}
-            type="text"
+            type="tel"
             id="contact-phone-input"
           />
         </div>
-        <input type="submit" value={params.businessId ? "Update" : "Add"} />
+        <button type="submit" className="btn btn-primary">{params.businessId ? "Update" : "Add"}</button>
         {params.businessId !== undefined ? (
           <Link
-            to="/list"
+            to="/BusinessList"
             onClick={() => {
               setErrors([]);
               cancelUpdate();
@@ -261,7 +262,7 @@ export default function BusinessForm(props) {
         ) : null}
         {params.businessId === undefined ? (
           <Link
-            to="/"
+            to="/BusinessList"
             onClick={() => {
               setErrors([]);
               cancelAdd();
@@ -274,3 +275,4 @@ export default function BusinessForm(props) {
     </div>
   );
 }
+export default BusinessForm;

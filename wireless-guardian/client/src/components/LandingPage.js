@@ -25,7 +25,7 @@ function LandingPage() {
             <button
               className="btn btn-dark"
               onClick={() => {
-                history.push("/you-pushed-this-button");
+                history.push("/you-pushed-this-button/i-told-you-not-to");
               }}
             >
               dont click me
@@ -34,7 +34,7 @@ function LandingPage() {
               className="btn btn-light"
               style={{ marginTop: "2%" }}
               onClick={() => {
-                history.push("/");
+                history.push("/what-did-i-just-tell-you");
               }}
             >
               dont click me either
