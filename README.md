@@ -7,3 +7,11 @@
 3. WG front-end
   - front-end CSS/HTML design
   - connect backend
+4. CRUD application for business/reseller ORG
+
+
+
+
+Bug-fixes:
+- edit form not populating for businesses
+- tables for sales reps duplicate population on render
