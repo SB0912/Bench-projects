@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useEffect, useState, event } from "react";
+import { useEffect, useState } from "react";
 
 function BusinessList(props) {
   const [businesses, setBusinesses] = useState([]);
@@ -67,9 +67,9 @@ function BusinessList(props) {
                   <Link to={`/business/edit/${business.businessId}`}>
                     <button
                       id="edit"
-                      onClick={() => {
-                        props.handleUpdate(business.businessId);
-                      }}
+                      // onClick={() => {
+                      //   props.handleUpdate(business.businessId);
+                      // }}
                     >
                       Edit
                     </button>

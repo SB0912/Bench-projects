@@ -11,6 +11,7 @@ function BusinessForm(props) {
   const [zipCode, setZipCode] = useState("");
   const [contactEmail, SetContactEmail] = useState("");
   const [contactPhone, SetContactPhone] = useState("");
+  const [sites, setSites] = useState([]);
   const [errors, setErrors] = useState([]);
 
   const params = useParams();
@@ -29,6 +30,7 @@ function BusinessForm(props) {
       setZipCode(targetBusiness.zipCode);
       SetContactEmail(targetBusiness.contactEmail);
       SetContactPhone(targetBusiness.contactPhone);
+      setSites(targetBusiness.sites);
     }
   };
 
@@ -84,6 +86,7 @@ function BusinessForm(props) {
       zipCode,
       contactEmail,
       contactPhone,
+      sites,
       businessId: params.businessId,
     };
     fetch(`${"http://localhost:8080/api/business"}/${params.businessId}`, {
@@ -97,7 +100,7 @@ function BusinessForm(props) {
       if (response.status === 204) {
         clearForm();
         // props.getAll();
-        history.push("/business/list");
+        history.push("/Businesslist");
         setErrors([]);
       } else {
         response.json().then((errors) => {
@@ -115,6 +118,7 @@ function BusinessForm(props) {
     setZipCode("");
     SetContactEmail("");
     SetContactPhone("");
+    setSites([]);
   };
 
   const cancelUpdate = () => {

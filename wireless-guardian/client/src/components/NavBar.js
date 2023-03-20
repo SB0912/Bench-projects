@@ -34,7 +34,7 @@ function NavBar() {
             </a>
           </li>
           <NavDropdown title="Businesses" id="basic-nav-dropdown">
-              <NavDropdown.Item href="BusinessList">View</NavDropdown.Item>
+              <NavDropdown.Item href="businessList">View</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="BusinessForm">
                 Add/Edit

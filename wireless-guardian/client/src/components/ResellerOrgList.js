@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useHistory, useParams, Link } from "react-router-dom";
 import Accordion from "react-bootstrap/Accordion";
 
-export default function ResellerOrgList(props) {
+function ResellerOrgList(props) {
   const [resellerOrgs, setResellerOrgs] = useState([]);
   const [resellerOrgDetail, setResellerOrgDetail] = useState(null);
   const [errors, setErrors] = useState([]);
@@ -121,7 +121,7 @@ export default function ResellerOrgList(props) {
                               <td>{item.latitude}</td>
                               <td>{item.longitude}</td>
                               <td>{item.servicesSold}</td>
-                              <td> $ {item.revenue}</td>
+                              <td> $ {item.revenue}.00</td>
                               <td>{item.multipleSites.toString()}</td>
                             </tr>
                           );
@@ -138,9 +138,9 @@ export default function ResellerOrgList(props) {
                   className="btn btn-warning btn-sm"
                   id="edit"
                   style={{ marginRight: "5px" }}
-                  onClick={() => {
-                    props.handleUpdate(resellerOrg.resellerOrgId);
-                  }}
+                //   onClick={() => {
+                //     props.handleResellerUpdate(resellerOrg.resellerOrgId);
+                //   }}
                 >
                   Edit
                 </button>
@@ -163,3 +163,4 @@ export default function ResellerOrgList(props) {
     );
   });
 }
+export default ResellerOrgList;

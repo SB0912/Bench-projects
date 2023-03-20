@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useHistory, useParams, Link } from "react-router-dom";
 
-export default function ResellerOrgForm(props) {
+function ResellerOrgForm(props) {
   const [name, setName] = useState("");
   const [parentOrgId, setParentOrgId] = useState("");
   const [childOrgId, setChildOrgId] = useState("");
@@ -29,7 +29,7 @@ export default function ResellerOrgForm(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (params.resellerOrgId !== undefined) {
-      handleUpdate();
+      handleResellerUpdate();
     } else {
       handleCreate();
     }
@@ -63,7 +63,7 @@ export default function ResellerOrgForm(props) {
     });
   };
 
-  const handleUpdate = () => {
+  const handleResellerUpdate = () => {
     const updatedResellerOrg = {
       name,
       parentOrgId,
@@ -81,7 +81,7 @@ export default function ResellerOrgForm(props) {
       if (response.status === 204) {
         clearForm();
         // props.getAll();
-        history.push("/list");
+        history.push("/ResellerOrglist");
         props.setErrors([]);
       } else {
         response.json().then((errors) => {
@@ -168,10 +168,10 @@ export default function ResellerOrgForm(props) {
             id="child-org-input"
           />
         </div>
-        <input type="submit" value={params.businessId ? "Update" : "Add"} />
-        {params.businessId !== undefined ? (
+        <input type="submit" value={params.resellerOrgId ? "Update" : "Add"} />
+        {params.resellerOrgId !== undefined ? (
           <Link
-            to="/list"
+            to="/ResellerOrgList"
             onClick={() => {
               setErrors([]);
               cancelUpdate();
@@ -180,9 +180,9 @@ export default function ResellerOrgForm(props) {
             <button className="btn btn-danger">Cancel</button>
           </Link>
         ) : null}
-        {params.businessId === undefined ? (
+        {params.resellerOrgId === undefined ? (
           <Link
-            to="/list"
+            to="/ResellerOrglist"
             onClick={() => {
               setErrors([]);
               cancelAdd();
@@ -195,3 +195,4 @@ export default function ResellerOrgForm(props) {
     </div>
   );
 }
+export default ResellerOrgForm;
