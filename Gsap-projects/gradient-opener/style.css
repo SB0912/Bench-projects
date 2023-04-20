@@ -22,19 +22,19 @@ section {
 
 .box1 {
     background-color: rgb(0, 0, 0);
-    transform: rotate(30deg) translateX(-60vw);
+    transform: rotate(30deg) translateX(-20vw);
     
 }
 
 .box2 {
     background-color: rgb(0, 0, 0);
-    transform: rotate(30deg) translateX(0vw);
+    transform: rotate(30deg) translateX(20vw);
     width: 500%;
 }
 
 .reveal {
     position: absolute;
-    left: 15%;
+    left: 25%;
 }
 
 h1 {
@@ -44,7 +44,7 @@ h1 {
     white-space: nowrap;
     margin: 0;
     top: 28%;
-    left: 19%;
+    left: 30%;
     color: rgb(255, 218, 162);
     mix-blend-mode: difference;
 }

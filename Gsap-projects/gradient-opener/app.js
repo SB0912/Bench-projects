@@ -55,7 +55,7 @@ gsap
     { opacity: 1 },
     {
       opacity: 0.75,
-      x: -1900
+      x: -1710
     }
   )
   .fromTo(
@@ -63,7 +63,7 @@ gsap
     { opacity: 1 },
     {
       opacity: 0.75,
-      x: 1000
+      x: 1500
     },
     0
   )
