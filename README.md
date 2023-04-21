@@ -1,5 +1,7 @@
 ﻿# Bench-projects
 
+WG:
+
 1. WG back-end
   - find all, find by ID, add, update, delete for:
     - businesses, reseller orgs, sales reps, sites
@@ -9,7 +11,9 @@
   - connect backend
 4. CRUD application for business/reseller ORG
 
+GSAP projects:
 
+1. add cross platform responsiveness
 
 
 Bug-fixes:

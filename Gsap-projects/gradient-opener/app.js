@@ -46,7 +46,7 @@ gsap
       trigger: ".container",
       pin: true,
       start: "top top",
-      end: "+=300%",
+      end: "+=200%",
       scrub: true
     }
   })
@@ -54,16 +54,16 @@ gsap
     ".box1",
     { opacity: 1 },
     {
-      opacity: 0.75,
-      x: -1710
+      opacity: 0.85,
+      x: -2800,
     }
   )
   .fromTo(
     ".box2",
     { opacity: 1 },
     {
-      opacity: 0.75,
-      x: 1500
+      opacity: 0.85,
+      x: 2000,
     },
     0
   )

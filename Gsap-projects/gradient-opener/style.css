@@ -8,7 +8,7 @@ body {
 section {
     height: 100vh;
     max-width: 100%;
-    background: rgb(240, 237, 237);
+    background: rgba(240,238,234,255);
     display: grid;
     grid-template-columns: auto auto;
     align-content: center;
@@ -16,20 +16,19 @@ section {
 }
 
 .box1, .box2 {
-    height: 600vh;
-    width: 150%;
+    height: 300vh;
+    width: 200%;
 }
 
 .box1 {
     background-color: rgb(0, 0, 0);
-    transform: rotate(30deg) translateX(-20vw);
+    transform: rotate(30deg) translateX(-40vw);
     
 }
 
 .box2 {
     background-color: rgb(0, 0, 0);
-    transform: rotate(30deg) translateX(20vw);
-    width: 500%;
+    transform: rotate(30deg) translateX(0vw);
 }
 
 .reveal {
@@ -44,7 +43,7 @@ h1 {
     white-space: nowrap;
     margin: 0;
     top: 28%;
-    left: 30%;
-    color: rgb(255, 218, 162);
+    left: 28%;
+    color: rgb(183, 165, 138);
     mix-blend-mode: difference;
 }
