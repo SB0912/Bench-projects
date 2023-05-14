@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  max-width: 100%;
+  color: black;
+}
+
+section {
+  height: 100vh;
+  max-width: 100%;
+  background: black;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+h1 {
+  margin: 0;
+  color: rgb(203, 120, 153);
+  text-align: center;
+  padding-left: 40%;
+  padding-top: 90%;
+  font-size: 700%;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+}
+
+.doors {
+  overflow: hidden;
+  background: rgba(243,241,233,255);
+}
+
+.right-door {
+  background: rgb(0, 0, 0);
+}
+
+.left-door {
+  background: rgb(0, 0, 0);
+}
+
+.reveal {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  left: 10%;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  height: auto;
+}
